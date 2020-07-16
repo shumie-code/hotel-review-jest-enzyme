@@ -12,7 +12,7 @@ const HotelItemWrapper = styled.div`
     text-decoration: none;
     `;
 
-const Title = styled.h3`
+export const Title = styled.h3`
     margin-left: 2%;
     `;
 

@@ -21,6 +21,7 @@ const reducer = (value, action) => {
         case 'GET_HOTELS_ERROR':
             return {
                 ...value,
+                hotels: [],
                 loading: false,
                 error: action.payload,
             };
@@ -65,7 +66,7 @@ const HotelsContextProvider = ({ children }) => {
         if (result.data && result.data.hasOwnProperty('id')) {
             dispatch ({ type: 'GET_HOTEL_SUCCESS', payload: result.data });
         } else {
-            dispatch ({ type: 'GET_HOTELS_ERROR', payload: result.error });
+            dispatch ({ type: 'GET_HOTEL_ERROR', payload: result.error });
         }
     };
 
